@@ -16,10 +16,10 @@ const Login = () => {
         setIsValidKey(false);
       }
     });
+    setGlobalState({ keyAuth });
   };
 
   function handleSubmit(e: any) {
-    setGlobalState({ keyAuth });
     setKeyAuth(e.target.value);
     validateSubmit();
   }
