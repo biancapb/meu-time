@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useContext } from "react";
-import UserContext from "../contexts/user";
 import { TeamStatisticModel } from "../models/teamStatistic.model";
 
 export async function GetTeamStatistic(
