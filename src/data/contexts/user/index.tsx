@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 import Props from "../../@types/Props";
 type UserType = {
-  keyAuthenticate: string;
+  keyAuth: string;
 };
 
 type PropsUserContext = {
@@ -10,7 +10,7 @@ type PropsUserContext = {
 };
 
 const DEFAULT_VALUE = {
-  state: { keyAuthenticate: "" },
+  state: { keyAuth: "" },
   setState: () => {},
 };
 
