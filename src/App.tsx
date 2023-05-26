@@ -1,7 +1,6 @@
 import React from "react";
+import BrowserRoutes from "./data/routes/routes";
 
-const App: React.FC = () => {
-  return <div className="App"></div>;
-};
-
-export default App;
+export default function App() {
+  return <BrowserRoutes />;
+}
