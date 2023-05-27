@@ -17,21 +17,24 @@ const LayoutLogin: React.FC = () => {
   const [keyAuth, setKeyAuth] = useState<string>("");
   const [isValidKey, setIsValidKey] = useState<boolean>(false);
   const { setState: setGlobalState } = useContext(UserContext);
+  const [error, setError] = useState<string>("");
 
   const validateSubmit = () => {
     validateAuthenticationKey(keyAuth).then((res) => {
-      if (res.data.errors.length === 0 && res.status === 200) {
+      if (res.status === 200 && res.data.errors.length === 0) {
         setIsValidKey(true);
+        setError("");
       } else {
         setIsValidKey(false);
+        setError("Chave de autenticação inválida.");
       }
     });
     setGlobalState({ keyAuth });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setKeyAuth(e.target.value);
-    validateSubmit();
+    const value = e.target.value;
+    setKeyAuth(value);
   };
 
   const handleClick = () => {
@@ -52,6 +55,7 @@ const LayoutLogin: React.FC = () => {
             id="outlined-required"
             label="API Key"
             placeholder="Insira sua API Key"
+            value={keyAuth}
             onChange={handleChange}
             inputProps={{
               style: {
@@ -62,8 +66,9 @@ const LayoutLogin: React.FC = () => {
               },
             }}
           />
+          {error && <p style={{ color: "red" }}>{error}</p>}
           <Button
-            onClick={() => handleClick()}
+            onClick={handleClick}
             textButton="Entrar"
             route={isValidKey ? "/home" : "/"}
           />
@@ -72,4 +77,5 @@ const LayoutLogin: React.FC = () => {
     </Container>
   );
 };
+
 export default LayoutLogin;
