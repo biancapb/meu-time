@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import UserContext from "../../data/contexts/user";
 import { GetTeamStatistic } from "../../data/services/team-statistic";
+import LayoutHome from "../../ui/components/LayoutHome/LayoutHome";
 
 const Home = () => {
   const { state } = useContext(UserContext);
@@ -8,7 +9,11 @@ const Home = () => {
     GetTeamStatistic("33", "2019", "39", state.keyAuth);
   }
 
-  return <div>Home</div>;
+  return (
+    <div>
+      <LayoutHome />
+    </div>
+  );
 };
 
 export default Home;
