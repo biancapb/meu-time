@@ -2,19 +2,25 @@
 
 Esta aplicação foi desenvolvida por Bianca Portela Barbosa, como Desafio Técnico durante o processo seletivo para a vaga de Desenvolvedora Front-end da empresa Trade Technology.
 
-[LinkedIn](https://www.linkedin.com/in/biancapb/)
+> Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/biancapb/)!
 
 # Inicializando a aplicação Meu Time
 
 ## Passo 1
 
-Para rodar o projeto, é necessário rodar:
+Para instalar o projeto localmente, é necessário rodar no seu terminal:
 
-### `npm install`
+```bash
+$ npm install
+```
 
 ## Passo 2
 
-### `npm start`
+Após a instalação, conclua com o seguinte comando:
+
+```bash
+$ npm start
+```
 
 ## Passo 3
 
