@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import UserContext from "../../data/contexts/user";
 import { validateAuthenticationKey } from "../../data/services/validate-authentication-key";
-import { Link } from "react-router-dom";
+import Button from "../../ui/components/Button/Button";
 
 const Login = () => {
   const [keyAuth, setKeyAuth] = useState<string>("");
@@ -10,7 +10,7 @@ const Login = () => {
 
   const validateSubmit = () => {
     validateAuthenticationKey(keyAuth).then((res) => {
-      if (res.data.errors.length === 0) {
+      if (res.data.errors.length === 0 && res.status === 200) {
         setIsValidKey(true);
       } else {
         setIsValidKey(false);
@@ -19,18 +19,24 @@ const Login = () => {
     setGlobalState({ keyAuth });
   };
 
-  function handleSubmit(e: any) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyAuth(e.target.value);
     validateSubmit();
-  }
+  };
+
+  const handleClick = () => {
+    validateSubmit();
+  };
 
   return (
     <div>
       Login
-      <input type="text" onChange={(e) => handleSubmit(e)}></input>
-      <Link onClick={() => validateSubmit()} to={isValidKey ? "/home" : "/"}>
-        Acessar
-      </Link>
+      <input type="text" onChange={(e) => handleChange(e)}></input>
+      <Button
+        onClick={() => handleClick()}
+        textButton="Entrar"
+        route={isValidKey ? "/home" : "/"}
+      />
     </div>
   );
 };
