@@ -40,6 +40,4 @@ export const FormContainer = styled.div`
   gap: 40px;
 `;
 
-export const LoginImageContainer = styled.img`
-  height: 100%;
-`;
+export const LoginImageContainer = styled.img``;
