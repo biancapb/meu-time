@@ -1,19 +1,31 @@
 import React from "react";
-import { Container } from "./ButtonStyle";
+import { Container, ButtonContainer } from "./ButtonStyle";
 import { Link } from "react-router-dom";
 
 interface ButtonProps {
   onClick: () => void;
   route?: string;
   textButton?: string;
+  isSearchButton?: boolean;
+  icon?: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, route, textButton }) => {
+const Button: React.FC<ButtonProps> = ({
+  icon,
+  isSearchButton,
+  onClick,
+  route,
+  textButton,
+}) => {
   return (
     <Container>
-      <Link onClick={onClick} to={route ? route : "/"}>
-        {textButton}
-      </Link>
+      {isSearchButton ? (
+        <ButtonContainer onClick={onClick}>{icon}</ButtonContainer>
+      ) : (
+        <Link onClick={onClick} to={route ? route : "/"}>
+          {textButton}
+        </Link>
+      )}
     </Container>
   );
 };

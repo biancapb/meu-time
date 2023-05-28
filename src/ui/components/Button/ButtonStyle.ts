@@ -21,3 +21,15 @@ export const Container = styled.div`
     transition-duration: 0.5s;
   }
 `;
+
+export const ButtonContainer = styled.button`
+  display: flex;
+  height: 55px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d87ff;
+  border-radius: 10px;
+
+  cursor: pointer;
+`;
