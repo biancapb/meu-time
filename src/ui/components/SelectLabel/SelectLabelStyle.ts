@@ -7,8 +7,17 @@ export const CustomInput = styled(Autocomplete)`
 
 export const Container = styled.div`
   display: flex;
+  width: 100vw;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
 `;
 
 export const Button = styled.button`
