@@ -1,4 +1,9 @@
+import Autocomplete from "@mui/material/Autocomplete";
 import styled from "styled-components";
+
+export const CustomInput = styled(Autocomplete)`
+  background-color: #d1e7fd;
+`;
 
 export const Container = styled.div`
   display: flex;

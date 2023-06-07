@@ -1,7 +1,6 @@
-import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import React from "react";
-import { Container } from "./SelectLabelStyle";
+import { Container, CustomInput } from "./SelectLabelStyle";
 import Button from "../Button/Button";
 
 import { FaSearch } from "react-icons/fa";
@@ -9,28 +8,28 @@ import { FaSearch } from "react-icons/fa";
 const SelectLabel: React.FC = () => {
   return (
     <Container>
-      <Autocomplete
+      <CustomInput
         disablePortal
         id="combo-box-demo"
         options={topFilms}
         sx={{ width: 280 }}
         renderInput={(params) => <TextField {...params} label="PAÍS" />}
       />
-      <Autocomplete
+      <CustomInput
         disablePortal
         id="combo-box-demo"
         options={topFilms}
         sx={{ width: 280 }}
         renderInput={(params) => <TextField {...params} label="LIGA" />}
       />
-      <Autocomplete
+      <CustomInput
         disablePortal
         id="combo-box-demo"
         options={topFilms}
         sx={{ width: 280 }}
         renderInput={(params) => <TextField {...params} label="TIME" />}
       />
-      <Autocomplete
+      <CustomInput
         disablePortal
         id="combo-box-demo"
         options={topFilms}
